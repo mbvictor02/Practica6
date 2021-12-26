@@ -1,0 +1,93 @@
+{
+    "tasks": [
+        {
+            "label": "Compilar «datos-pruebas»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "datos-pruebas"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «datos-pruebas»",
+            "type": "shell",
+            "command": "bin/datos-pruebas",
+            "windows": {
+                "command": "chcp 65001 ; bin\\datos-pruebas.exe",
+            },
+            "dependsOn": "Compilar «datos-pruebas»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Compilar «contar-usos»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "contar-usos"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «contar-usos»",
+            "type": "shell",
+            "command": "bin/contar-usos",
+            "windows": {
+                "command": "chcp 65001 ; bin\\contar-usos.exe",
+            },
+            "dependsOn": "Compilar «contar-usos»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Compilar «usos-por-usuario»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "usos-por-usuario"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «usos-por-usuario»",
+            "type": "shell",
+            "command": "bin/usos-por-usuario",
+            "windows": {
+                "command": "chcp 65001 ; bin\\usos-por-usuario.exe",
+            },
+            "dependsOn": "Compilar «usos-por-usuario»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Limpiar resultados de compilación",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+       },
+    ],
+    "presentation": {
+        "showReuseMessage": true,
+        "panel": "shared",
+        "reveal": "always",
+        "focus": true,
+    },
+    "version": "2.0.0"
+}
